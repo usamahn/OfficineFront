@@ -52,11 +52,11 @@ const SERVICE_OPTIONS = [
 ];
 
 const TABLE_HEAD = [
-  { id: 'invoiceNumber', label: 'Client', align: 'left' },
-  { id: 'createDate', label: 'Create', align: 'left' },
-  { id: 'dueDate', label: 'Due', align: 'left' },
+  { id: 'invoiceNumber', label: 'Drug Name', align: 'left' },
+  { id: 'createDate', label: 'Order Date', align: 'left' },
+  { id: 'dueDate', label: 'Unit Price', align: 'left' },
   { id: 'price', label: 'Amount', align: 'center', width: 140 },
-  { id: 'sent', label: 'Sent', align: 'center', width: 140 },
+  { id: 'sent', label: 'Wholesaler', align: 'center', width: 140 },
   { id: 'status', label: 'Status', align: 'left' },
   { id: '' },
 ];
@@ -161,9 +161,9 @@ export default function InvoiceList() {
 
   const TABS = [
     { value: 'all', label: 'All', color: 'info', count: tableData.length },
-    { value: 'paid', label: 'Paid', color: 'success', count: getLengthByStatus('paid') },
-    { value: 'unpaid', label: 'Unpaid', color: 'warning', count: getLengthByStatus('unpaid') },
-    { value: 'overdue', label: 'Overdue', color: 'error', count: getLengthByStatus('overdue') },
+    { value: 'Completed', label: 'Completed', color: 'success', count: getLengthByStatus('paid') },
+    { value: 'Pending', label: 'Pending', color: 'warning', count: getLengthByStatus('unpaid') },
+    { value: 'Regected', label: 'Regected', color: 'error', count: getLengthByStatus('overdue') },
     { value: 'draft', label: 'Draft', color: 'default', count: getLengthByStatus('draft') },
   ];
 
@@ -174,7 +174,7 @@ export default function InvoiceList() {
           heading="Invoice List"
           links={[
             { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'Invoices', href: PATH_DASHBOARD.invoice.root },
+            { name: 'Orders', href: PATH_DASHBOARD.invoice.root },
             { name: 'List' },
           ]}
           action={
@@ -184,7 +184,7 @@ export default function InvoiceList() {
               to={PATH_DASHBOARD.invoice.new}
               startIcon={<Iconify icon={'eva:plus-fill'} />}
             >
-              New Invoice
+              New Order
             </Button>
           }
         />
@@ -205,7 +205,7 @@ export default function InvoiceList() {
                 color={theme.palette.info.main}
               />
               <InvoiceAnalytic
-                title="Paid"
+                title="Completed"
                 total={getLengthByStatus('paid')}
                 percent={getPercentByStatus('paid')}
                 price={getTotalPriceByStatus('paid')}
@@ -213,7 +213,7 @@ export default function InvoiceList() {
                 color={theme.palette.success.main}
               />
               <InvoiceAnalytic
-                title="Unpaid"
+                title="Pending"
                 total={getLengthByStatus('unpaid')}
                 percent={getPercentByStatus('unpaid')}
                 price={getTotalPriceByStatus('unpaid')}
@@ -221,7 +221,7 @@ export default function InvoiceList() {
                 color={theme.palette.warning.main}
               />
               <InvoiceAnalytic
-                title="Overdue"
+                title="Rejected"
                 total={getLengthByStatus('overdue')}
                 percent={getPercentByStatus('overdue')}
                 price={getTotalPriceByStatus('overdue')}

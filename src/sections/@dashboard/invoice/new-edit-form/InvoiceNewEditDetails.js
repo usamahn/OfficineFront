@@ -56,14 +56,14 @@ export default function InvoiceNewEditDetails() {
               <RHFTextField
                 size="small"
                 name={`items[${index}].title`}
-                label="Title"
+                label="Drug Name"
                 InputLabelProps={{ shrink: true }}
               />
 
               <RHFTextField
                 size="small"
                 name={`items[${index}].description`}
-                label="Description"
+                label="Order Description"
                 InputLabelProps={{ shrink: true }}
               />
 
@@ -115,14 +115,16 @@ export default function InvoiceNewEditDetails() {
               />
 
               <RHFTextField
+                disabled
                 size="small"
                 type="number"
                 name={`items[${index}].price`}
-                label="Price"
+                label="Unit Price"
                 onChange={(event) => setValue(`items[${index}].price`, Number(event.target.value))}
                 InputProps={{
-                  startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                  startAdornment: <InputAdornment position="start">DT</InputAdornment>,
                 }}
+                value={fNumber(50)}
                 sx={{ maxWidth: { md: 96 } }}
               />
 
@@ -133,7 +135,7 @@ export default function InvoiceNewEditDetails() {
                 label="Total"
                 value={fNumber(values.items[index].quantity * values.items[index].price)}
                 InputProps={{
-                  startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                  startAdornment: <InputAdornment position="start">DT</InputAdornment>,
                 }}
                 sx={{ maxWidth: { md: 96 } }}
               />

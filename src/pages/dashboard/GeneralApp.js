@@ -38,42 +38,59 @@ export default function GeneralApp() {
           <Grid item xs={12} md={4}>
             <AppFeatured />
           </Grid>
-
           <Grid item xs={12} md={4}>
             <AppWidgetSummary
-              title="Total Active Users"
-              percent={2.6}
-              total={18765}
-              chartColor={theme.palette.primary.main}
+              title="Stockout"
+              percent={-3.6}
+              total={38}
+              chartColor={theme.palette.error.dark}
               chartData={[5, 18, 12, 51, 68, 11, 39, 37, 27, 20]}
             />
           </Grid>
 
+
           <Grid item xs={12} md={4}>
             <AppWidgetSummary
-              title="Total Installed"
-              percent={0.2}
-              total={4876}
-              chartColor={theme.palette.chart.blue[0]}
+              title={"UnderStock"}
+              percent={44}
+              total={354}
+              chartColor={theme.palette.warning.main}
               chartData={[20, 41, 63, 33, 28, 35, 50, 46, 11, 26]}
             />
           </Grid>
 
           <Grid item xs={12} md={4}>
             <AppWidgetSummary
-              title="Total Downloads"
-              percent={-0.1}
+              title="Satisfactory"
+              percent={60}
               total={678}
-              chartColor={theme.palette.chart.red[0]}
+              chartColor={theme.palette.success.main}
               chartData={[8, 9, 31, 8, 16, 37, 8, 33, 46, 31]}
             />
           </Grid>
-
           <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentDownload />
+            <Stack spacing={3}>
+              <AppWidget title="Not Expired" total={385} icon={'eva:checkmark-fill'} chartData={48} />
+              <AppWidget title="Expire Soon" total={555} icon={'eva:alert-circle-fill'} color="warning" chartData={75} />
+              <AppWidget title="Expired" total={555} icon={'eva:slash-fill'} color="error" chartData={75} />
+            </Stack>
           </Grid>
+        
 
           <Grid item xs={12} md={6} lg={8}>
+            <AppCurrentDownload 
+            title="Expected property shorthand"
+            l= {['Mac', 'Window', 'iOS', 'Android']}
+            c= {[theme.palette.primary.lighter,
+              theme.palette.primary.light,
+              theme.palette.primary.main,
+              theme.palette.primary.dark,
+            ]}
+            chartData = {[12244, 53345, 44313, 78343]}
+            />
+          </Grid>
+
+          <Grid item xs={12} md={6} lg={12}>
             <AppAreaInstalled />
           </Grid>
 

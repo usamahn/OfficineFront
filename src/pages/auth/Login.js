@@ -90,8 +90,9 @@ export default function Login() {
             <Image
               visibleByDefault
               disabledEffect
+              width="50%"
               alt="login"
-              src="https://minimal-assets-api.vercel.app/assets/illustrations/illustration_login.png"
+              src="https://cdn-icons-png.flaticon.com/512/843/843199.png"
             />
           </SectionStyle>
         )}

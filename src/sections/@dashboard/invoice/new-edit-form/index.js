@@ -118,7 +118,7 @@ export default function InvoiceNewEditForm({ isEdit, currentInvoice }) {
     <FormProvider methods={methods}>
       <Card>
         <InvoiceNewEditAddress />
-        <InvoiceNewEditStatusDate />
+        {/* <InvoiceNewEditStatusDate /> */}
         <InvoiceNewEditDetails />
       </Card>
 
