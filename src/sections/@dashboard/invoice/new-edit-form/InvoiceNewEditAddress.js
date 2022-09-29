@@ -30,8 +30,57 @@ export default function InvoiceNewEditAddress() {
 
   const { toggle: openTo, onOpen: onOpenTo, onClose: onCloseTo } = useToggle();
 
-  const { invoiceFrom, invoiceTo } = values;
-
+  const {  invoiceTo } = values;
+  const invoiceFrom= {
+    id: 1,
+    name: "Oussama HENIA",
+    address: "Tunis",
+    company: "Pharmacie de tunis",
+    email: "pharmacie@gmail.com",
+    phone: "23556095",
+  }
+const _invoiceAddressTo = [
+  {
+    id: 1,
+    name: "Mohamed G",
+    address: "Tunis",
+    company: "Grossiste 1",
+    email: "grossiste1@gmail.com",
+    phone: "21334506",
+  },
+  {
+    id: 1,
+    name: "Mohamed G",
+    address: "Tunis",
+    company: "Grossiste 1",
+    email: "grossiste1@gmail.com",
+    phone: "21334506",
+  },
+  {
+    id: 1,
+    name: "Mohamed G",
+    address: "Tunis",
+    company: "Grossiste 1",
+    email: "grossiste1@gmail.com",
+    phone: "21334506",
+  },  
+  {
+    id: 1,
+    name: "Mohamed G",
+    address: "Tunis",
+    company: "Grossiste 1",
+    email: "grossiste1@gmail.com",
+    phone: "21334506",
+  },
+  {
+    id: 1,
+    name: "Mohamed G",
+    address: "Tunis",
+    company: "Grossiste 1",
+    email: "grossiste1@gmail.com",
+    phone: "21334506",
+  }
+]
   return (
     <Stack
       spacing={{ xs: 2, md: 5 }}
@@ -54,11 +103,21 @@ export default function InvoiceNewEditAddress() {
             onClose={onCloseFrom}
             selected={(selectedId) => invoiceFrom?.id === selectedId}
             onSelect={(address) => setValue('invoiceFrom', address)}
-            addressOptions={_invoiceAddressFrom}
+            addressOptions={
+              // _invoiceAddressFrom
+              [{
+                id: 1,
+                name: "Oussama HENIA",
+                address: "Tunis",
+                company: "Pharmacie de tunis",
+                email: "pharmacie@gmail.com",
+                phone: "23556095",
+              }]
+            }
           />
         </Stack>
 
-        <AddressInfo name={invoiceFrom.name} address={invoiceFrom.address} phone={invoiceFrom.phone} />
+        <AddressInfo name={invoiceFrom.name} company={invoiceFrom.company} address={invoiceFrom.address}  phone={invoiceFrom.phone} />
       </Stack>
 
       <Stack sx={{ width: 1 }}>
@@ -85,7 +144,7 @@ export default function InvoiceNewEditAddress() {
         </Stack>
 
         {invoiceTo ? (
-          <AddressInfo name={invoiceTo.name} address={invoiceTo.address} phone={invoiceTo.phone} />
+          <AddressInfo name={invoiceTo.name} company={invoiceTo.company} address={invoiceTo.address} phone={invoiceTo.phone} />
         ) : (
           <Typography typography="caption" sx={{ color: 'error.main' }}>
             {errors.invoiceTo ? errors.invoiceTo.message : null}
@@ -104,10 +163,11 @@ AddressInfo.propTypes = {
   phone: PropTypes.string,
 };
 
-function AddressInfo({ name, address, phone }) {
+function AddressInfo({ name,company, address, phone }) {
   return (
     <>
       <Typography variant="subtitle2">{name}</Typography>
+      <Typography variant="subtitle2">{company}</Typography>
       <Typography variant="body2" sx={{ mt: 1, mb: 0.5 }}>
         {address}
       </Typography>
