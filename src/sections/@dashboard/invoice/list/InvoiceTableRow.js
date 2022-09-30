@@ -65,7 +65,7 @@ export default function InvoiceTableRow({ row, selected, onSelectRow, onViewRow,
 
       <TableCell align="left">{fDate(dueDate)}</TableCell>
 
-      <TableCell align="center">{fCurrency(totalPrice)}</TableCell>
+      <TableCell align="center">{`${totalPrice} DT`}</TableCell>
 
       <TableCell align="center" sx={{ textTransform: 'capitalize' }}>
         {sent}
@@ -75,9 +75,9 @@ export default function InvoiceTableRow({ row, selected, onSelectRow, onViewRow,
         <Label
           variant={theme.palette.mode === 'light' ? 'ghost' : 'filled'}
           color={
-            (status === 'paid' && 'success') ||
-            (status === 'unpaid' && 'warning') ||
-            (status === 'overdue' && 'error') ||
+            (status === 'Completed' && 'success') ||
+            (status === 'Pending' && 'warning') ||
+            (status === 'Rejected' && 'error') ||
             'default'
           }
           sx={{ textTransform: 'capitalize' }}

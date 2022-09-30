@@ -8,7 +8,7 @@ import { RHFSelect } from '../../../../components/hook-form';
 
 // ----------------------------------------------------------------------
 
-const STATUS_OPTIONS = ['paid', 'unpaid', 'overdue', 'draft'];
+const STATUS_OPTIONS = ['Completed', 'Rejected', 'Pending'];
 
 // ----------------------------------------------------------------------
 

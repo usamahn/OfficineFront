@@ -34,15 +34,15 @@ export default function AppNewInvoice() {
 
   return (
     <Card>
-      <CardHeader title="New Invoice" sx={{ mb: 3 }} />
+      <CardHeader title="New Orders" sx={{ mb: 3 }} />
       <Scrollbar>
         <TableContainer sx={{ minWidth: 720 }}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Invoice ID</TableCell>
-                <TableCell>Category</TableCell>
-                <TableCell>Price</TableCell>
+                <TableCell>Order ID</TableCell>
+                
+                <TableCell>Amount to pay</TableCell>
                 <TableCell>Status</TableCell>
                 <TableCell />
               </TableRow>
@@ -50,15 +50,14 @@ export default function AppNewInvoice() {
             <TableBody>
               {_appInvoices.map((row) => (
                 <TableRow key={row.id}>
-                  <TableCell>{`INV-${row.id}`}</TableCell>
-                  <TableCell>{row.category}</TableCell>
-                  <TableCell>{fCurrency(row.price)}</TableCell>
+                  <TableCell>{`ORD-${row.id}`}</TableCell>
+                  <TableCell>{`${row.price} DT`}</TableCell>
                   <TableCell>
                     <Label
                       variant={theme.palette.mode === 'light' ? 'ghost' : 'filled'}
                       color={
-                        (row.status === 'in_progress' && 'warning') ||
-                        (row.status === 'out_of_date' && 'error') ||
+                        (row.status === 'Pending' && 'warning') ||
+                        (row.status === 'Rejected' && 'error') ||
                         'success'
                       }
                     >
