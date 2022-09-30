@@ -102,40 +102,6 @@ function CarouselItem({ item, isActive }) {
   const { image, title, description } = item;
 
   return (
-    <Box sx={{ position: 'relative' }}>
-      <CardContent
-        component={MotionContainer}
-        animate={isActive}
-        action
-        sx={{
-          bottom: 0,
-          width: 1,
-          zIndex: 9,
-          textAlign: 'left',
-          position: 'absolute',
-          color: 'common.white',
-        }}
-      >
-        <m.div variants={varFade().inRight}>
-          <Typography variant="overline" component="div" sx={{ mb: 1, opacity: 0.48 }}>
-            Featured App
-          </Typography>
-        </m.div>
-        <m.div variants={varFade().inRight}>
-          <Link component={RouterLink} to="#" color="inherit" underline="none">
-            <Typography variant="h5" gutterBottom noWrap>
-              {title}
-            </Typography>
-          </Link>
-        </m.div>
-        <m.div variants={varFade().inRight}>
-          <Typography variant="body2" noWrap>
-            {description}
-          </Typography>
-        </m.div>
-      </CardContent>
-      <OverlayStyle />
-      <Image alt={title} src={image} sx={{ height: { xs: 280, xl: 320 } }} />
-    </Box>
+    <div></div>
   );
 }

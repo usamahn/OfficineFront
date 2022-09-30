@@ -34,7 +34,7 @@ export const _appAuthors = [...Array(3)].map((_, index) => ({
 export const _appInvoices = [...Array(5)].map((_, index) => ({
   id: `${Date.now() + index}`,
   price: _mock.number.price(index),
-  category: randomInArray(['Android', 'Mac', 'Windows']),
+  category: randomInArray(['Maxilas', 'Panadol', 'Voltaren']),
   status: randomInArray(['Pending', 'Completed', 'Rejected']),
 }));
 

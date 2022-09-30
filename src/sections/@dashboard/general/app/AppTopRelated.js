@@ -16,16 +16,7 @@ import Scrollbar from '../../../../components/Scrollbar';
 
 export default function AppTopRelated() {
   return (
-    <Card>
-      <CardHeader title="Top Related Applications" />
-      <Scrollbar>
-        <Stack spacing={3} sx={{ p: 3, pr: 0 }}>
-          {_appRelated.map((app) => (
-            <ApplicationItem key={app.id} app={app} />
-          ))}
-        </Stack>
-      </Scrollbar>
-    </Card>
+ <div></div>
   );
 }
 

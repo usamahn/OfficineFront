@@ -79,8 +79,8 @@ export default function GeneralApp() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppCurrentDownload 
-            title="Expected property shorthand"
-            l= {['Mac', 'Window', 'iOS', 'Android']}
+            title="Most selling"
+            l= {['Valium', 'Viagra', 'Voltaren Gel', 'Vistaril']}
             c= {[theme.palette.primary.lighter,
               theme.palette.primary.light,
               theme.palette.primary.main,
